@@ -1,0 +1,18 @@
+name: "mysql"
+
+services:
+  mysql:
+    image: bitnami/mysql:8.3.0
+    container_name: mysql
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data:/bitnami/mysql/data
+    environment:
+      - ALLOW_EMPTY_PASSWORD=no
+      - MYSQL_ROOT_USER=root
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=database
