@@ -1,0 +1,15 @@
+FROM node:21-alpine as build
+
+WORKDIR /app
+
+COPY package.json package-lock.json ./
+RUN npm i
+COPY . .
+RUN npm install
+
+FROM bitnami/nginx:1.25
+
+COPY --from=build --chown=1001:1001 /app/dist /app
+COPY --chown=1001:1001 nginx.conf /opt/bitnami/nginx/conf/server_blocks/
+
+USER 1001
