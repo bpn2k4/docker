@@ -1,6 +1,6 @@
 # Docker
 
-This repo contains:<br>
+This repo contains:  <br>
 - [`docker`](./docker): Dockerfile template for some languages like: Nodejs, React Project, Go, Python,... <br>
 - [`template`](./templates/): Docker compose file for some services like: mysql, postgresql, elasticsearch, kibana,... <br>
 - [`examples`](./examples/): Some docker compose file for multi containers app, or ad-hoc app like: gitlab,... <br>
